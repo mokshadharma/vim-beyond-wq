@@ -107,6 +107,7 @@ wean yourself off of the arrow keys - use vim motion keys instead
 ***** "
 ***** (
 ***** {
+***** inner vs a
 ***** examples
 ****** iw
 ****** aw

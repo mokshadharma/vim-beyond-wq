@@ -168,6 +168,10 @@ wean yourself off of the arrow keys - use vim motion keys instead
 ***** :s/foo/bar/i
 ***** :s/foo/bar/ig
 ***** :%s/foo/bar
+***** :7,12s/foo/bar
+***** search and replace on a visually selected part of the buffer
+****** select something in visual mode
+****** :'<,'>s/foo/bar
 ***** :g/foo/d
 ***** :v/foo/d
 ***** vim has a hugely powerful regex system (:help pattern.txt)

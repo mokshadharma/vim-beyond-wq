@@ -37,6 +37,11 @@ wean yourself off of the arrow keys - use vim motion keys instead
 ***** :q!
 ***** :wq!
 ** Intermediate
+*** Turning on line numbering
+**** :set number
+**** :set nonumber
+**** :set relativenumber
+**** :set norelativenumber
 *** Undo
 **** u
 *** Redo

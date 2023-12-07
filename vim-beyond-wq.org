@@ -1,0 +1,358 @@
+* vim - beyond :wq - https://github.com/mokshadharma/vim-beyond-wq
+** What's covered
+*** Review of vim basics
+*** Intermediate vim use
+*** commands most useful to me and that I use every day
+** What's not covered
+*** configuring vim
+*** scripts
+*** plugins
+*** color schemes
+*** keybindings
+** Basics
+*** MOST IMPORTANT THING IN THIS PRESENTATION: use vimtutor !
+*** Modes
+**** Normal
+**** Insert
+***** i
+***** a
+***** A
+***** I
+***** Tip
+only type or paste text and use the backspace key in insert mode
+***** Tip
+wean yourself off of the arrow keys - use vim motion keys instead
+***** ESCAPE to exit insert mode and go back to normal mode
+**** Command-line
+***** : from normal mode
+***** uses "[[https://www.gnu.org/fun/jokes/ed-msg.html][ed]]" commands
+**** Visual
+*** Basic motion
+**** h, j, k, l
+*** Saving and quitting
+**** from normal mode (hit ESCAPE if in insert mode)
+***** :q
+***** :wq
+***** ZZ
+***** :q!
+***** :wq!
+** Intermediate
+*** Undo
+**** u
+*** Redo
+**** ^r
+*** Repeat
+**** .
+***** ifoo bar<ESC>....
+***** afoo bar<ESC>....
+*** Motion
+**** h, j, k, l
+**** 3h, 3j, 3k, 3l
+**** G
+**** gg
+**** 7G
+**** 0
+**** ^
+**** $
+**** w
+**** b
+**** zz
+**** zt
+**** zb
+**** H
+**** L
+**** M
+**** control-f
+**** control-b
+**** fx
+**** tx
+**** Fx
+**** Tx
+**** ;
+**** ,
+**** {
+**** }
+**** :set number
+**** :set relativenumber
+**** Tips
+***** Don't move in insert mode
+***** Go to normal mode as soon as you're done inserting text
+***** Don't use the arrow keys
+*** Marks
+**** mx
+**** `x
+**** 'x
+**** ``
+*** Editing text
+**** Text objects
+***** iw
+***** aw
+***** ip
+***** ap
+***** i"
+***** a"
+***** i(
+***** a(
+***** i{
+***** a{
+**** Paste
+***** p
+***** P
+**** Copying ("yanking")
+***** yy
+***** y$
+***** Y
+***** yw
+***** yb
+***** ye
+***** ytX
+***** yfX
+***** yTX
+***** yFX
+***** yiw
+***** yaw
+***** yip
+***** yap
+***** yi(
+***** yi{
+**** Deletion or cutting
+***** NOTE: deleting also copies or "yanks" by default
+***** dd
+***** d$
+***** D
+***** x
+***** xp
+***** dw
+***** db
+***** de
+***** dtX
+***** dfX
+***** dTX
+***** dFX
+***** diw
+***** daw
+***** dip
+***** dap
+***** di(
+***** di{
+**** Changing
+***** NOTE: changing also copies or "yanks" by default
+***** cw
+***** cb
+***** ce
+***** c$
+***** C
+***** ctX
+***** cfX
+***** cTX
+***** cFX
+***** ciw
+***** caw
+***** cip
+***** cap
+***** ci(
+***** ci{
+**** Replacing
+***** r
+***** R
+*** Searching
+**** Basic search
+***** /
+***** n
+***** N
+***** ?
+***** :noh
+**** Search and replace
+***** :s/foo/bar
+***** :s/foo/bar/g
+***** :s/foo/bar/i
+***** :s/foo/bar/ig
+***** :%s/foo/bar
+***** :g/foo/d
+***** :v/foo/d
+***** vim has a hugely powerful regex system
+*** Selecting blocks of text
+**** v
+**** V
+**** ctrl-v
+**** gv
+**** NOTE: You can abort out of visual selection mode via control-c
+*** ^o followed by a normal mode command in insert mode
+*** Registers
+**** What is a register?
+***** A place to store and retrieve text inside vim.
+***** Sort of like a clipboard and a variable, but:
+****** Usually persist across vim sessions.
+****** Not tied to any particular script or program,
+******* though scripts/programs can use registers, if they want to.
+**** How do you see the contents of your registers?
+***** :registers
+***** type q to exit out of that view
+**** You reference registers with a " followed by the register name
+**** Most useful registers (for me)
+***** Unnamed register:  ""
+****** Purpose
+******* Default destination of delete and yank commands (dw x cw dtz dfz)
+****** Examples
+******* Simplest
+******** x
+******** p
+******* Simple (but useless)
+******** x
+******** ""p
+******* Intermediate
+******** x
+******** i^R"
+******* Advanced
+******** Editing some text with weird characters in it
+******** yl
+******** /^R"
+******** ?^R"
+******** :%s/^R"/"/g
+***** Named registers:  "a, "b, "c, etc
+****** Purpose
+******* Copy and paste text to and from them
+****** Examples
+******* Yank and paste
+******** "ayw
+******** "ap
+******* Delete and paste
+******** "bdw
+******** "bp
+******* Intermediate
+******** One
+********* "cytf
+********* "cp
+******** Two
+********* V}"dy
+********* "dP
+******* Advanced
+******** Like with unnamed register
+******** Editing some text with weird characters in it
+******** "ayl
+******** /^Ra
+******** ?^R"
+******** :%s/^R"/"/g
+****** Macros
+******* Quick macro tutorial
+******** qX to start recording, where "X" is a named register (ie. a letter)
+******** Example: qq
+******** q to stop recording
+******** @X to playback macro
+******** Example: @q
+******** @@ to playback last macro again
+******* Example stolen from StackOverflow
+      ID  Df  %Dev    Lambda
+      1   0   0.000000    0.313682
+      2   1   0.023113    0.304332
+      3   1   0.044869    0.295261
+      4   1   0.065347    0.286460
+      5   1   0.084623    0.277922
+      6   1   0.102767    0.269638
+      7   1   0.119845    0.261601
+***** X Clipboard and X Selection registers:  "* "+
+****** Purpose
+******* Copy/paste to/from X
+****** Caveats
+******* You need to have vim compiled with +xterm_clipboard
+******* See :version
+****** Examples
+******* "*yy
+******* "*p
+******* "+yy
+******* "+p
+***** Last search pattern register:  "/
+****** Example
+******* i^R/
+******* "/p
+**** Other registers
+***** Numbered registers: "0 to "9
+****** Purpose
+******* Contain text from ordinary yank and delete commands.
+****** Examples
+******* a
+******* b
+******* c
+******* d
+******* e
+******* f
+******* g
+******* h
+******* i
+***** Named registers -- capital letters
+****** Purpose
+******* Append to regular named registers
+****** Examples
+******* "ayw
+******* "ap
+******* "Ayw
+******* "ap
+***** Black hole register: "_
+****** Anything yanked or deleted to this register just disappears.
+***** Small delete register:  "-
+****** Contains deletions of less than one line
+***** Expression register:  "=
+****** Useful if you know vimscript and want to evaluate something on the fly.
+****** Uses
+******* Arithmetic operations?
+******* Yank/paste contents of variables?
+***** Last inserted register:  ".
+***** Filename register:  "%
+***** Command register:   ":
+****** Contains the most recent command typed in command mode:  :w
+**** See the contents of your registers
+***** :registers
+**** Using registers in insert mode
+***** ^r register in insert mode
+**** More info
+***** :help registers
+***** [[http://www.jwz.org/doc/x-cut-and-paste.html][JWZ on X Clipboard, Primary, Secondary selection]]
+***** #vim on Slack, libera chat / freenode
+***** http://stackoverflow.com/questions/1497958/how-to-use-vim-registers
+***** http://blog.sanctum.geek.nz/advanced-vim-registers/
+*** Macros
+**** recording
+***** qq
+**** playing back
+***** @q
+**** repeating
+***** 2@q
+**** editing
+*** buffers, windows, and tabs
+**** what's the difference?
+**** buffers
+***** editing a new buffer or opening a file in a window
+****** :e foo
+***** go back to the previous buffer
+****** :bprev
+***** go to the next buffer
+****** :bnext
+**** windows
+***** creating new windows
+****** ^ws
+****** ^wv
+***** moving between windows
+****** ^wh
+****** ^wj
+****** ^wk
+****** ^wl
+***** closing windows
+****** ^wc
+****** ^wo
+**** tabs
+***** create a new tab
+****** :tabnew
+***** move between tabs
+****** :tabn
+****** :tabp
+***** close tabs
+****** :tabc
+****** :tabo
+** Resources
+*** vimtutor
+*** #vim on Slack
+*** #vim on [[https://libera.chat/][Libera chat]]
+*** [[https://www.vimgolf.com/][vimgolf]]
+*** [[https://www.vim.org/][vim.org]]
+**** scripts
+*** LLMs like copilot, ChatGPT, Claude, etc

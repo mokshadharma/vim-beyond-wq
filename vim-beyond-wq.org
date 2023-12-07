@@ -170,7 +170,7 @@ wean yourself off of the arrow keys - use vim motion keys instead
 ***** :%s/foo/bar
 ***** :g/foo/d
 ***** :v/foo/d
-***** vim has a hugely powerful regex system
+***** vim has a hugely powerful regex system (:help pattern.txt)
 *** Selecting blocks of text
 **** v
 **** V

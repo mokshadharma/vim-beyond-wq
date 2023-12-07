@@ -99,6 +99,7 @@ wean yourself off of the arrow keys - use vim motion keys instead
 **** `x
 **** 'x
 **** ``
+**** ''
 *** Editing text
 **** Text objects
 ***** iw

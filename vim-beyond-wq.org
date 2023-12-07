@@ -367,4 +367,6 @@ wean yourself off of the arrow keys - use vim motion keys instead
 *** [[https://www.vimgolf.com/][vimgolf]]
 *** [[https://www.vim.org/][vim.org]]
 **** scripts
+**** plugins
+**** color schemes
 *** LLMs like copilot, ChatGPT, Claude, etc

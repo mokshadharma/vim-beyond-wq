@@ -31,6 +31,10 @@ wean yourself off of the arrow keys - use vim motion keys instead
 **** Command-line
 ***** : from normal mode
 ***** uses "[[https://www.gnu.org/fun/jokes/ed-msg.html][ed]]" commands
+***** example commands
+****** :wq
+****** :e foo.txt
+****** :q
 **** Visual
 *** Basic motion
 **** h, j, k, l

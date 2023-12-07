@@ -22,6 +22,7 @@
 ***** A
 ***** I
 ***** o
+***** O
 ***** Tip
 only type or paste text and use the backspace key in insert mode
 ***** Tip

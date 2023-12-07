@@ -58,7 +58,9 @@ wean yourself off of the arrow keys - use vim motion keys instead
 *** Repeat
 **** .
 ***** ifoo bar<ESC>....
+
 ***** afoo bar<ESC>....
+
 *** Motion
 **** h, j, k, l
 **** 3h, 3j, 3k, 3l

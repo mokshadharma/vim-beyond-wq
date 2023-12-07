@@ -1,0 +1,7 @@
+vim - beyond :wq
+
+A presentation on intermediate vim use.
+
+Open an [issue](https://github.com/mokshadharma/vim-beyond-wq/issues) or start a [discussion](https://github.com/mokshadharma/vim-beyond-wq/discussions) if you have a question.
+
+Also see the [wiki](https://github.com/mokshadharma/vim-beyond-wq/wiki) for links to useful vim-related resources.

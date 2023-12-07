@@ -102,16 +102,17 @@ wean yourself off of the arrow keys - use vim motion keys instead
 **** ''
 *** Editing text
 **** Text objects
-***** iw
-***** aw
-***** ip
-***** ap
-***** i"
-***** a"
-***** i(
-***** a(
-***** i{
-***** a{
+***** examples
+****** iw
+****** aw
+****** ip
+****** ap
+****** i"
+****** a"
+****** i(
+****** a(
+****** i{
+****** a{
 **** Paste
 ***** p
 ***** P

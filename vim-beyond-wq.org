@@ -102,6 +102,11 @@ wean yourself off of the arrow keys - use vim motion keys instead
 **** ''
 *** Editing text
 **** Text objects
+***** w
+***** p
+***** "
+***** (
+***** {
 ***** examples
 ****** iw
 ****** aw

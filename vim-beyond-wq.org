@@ -13,6 +13,7 @@
 *** MOST IMPORTANT THING IN THIS PRESENTATION: use vimtutor !
 *** :help
 *** :help TOPIC (ex: :help pattern.txt)
+*** See [[*Resources][Resources]] section below
 *** Modes
 **** Normal
 **** Insert
